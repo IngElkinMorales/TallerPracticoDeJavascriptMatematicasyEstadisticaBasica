@@ -1,0 +1,59 @@
+:root{
+    --black: #252525;
+    --white: #ffffff;
+    --dark-palet-color: #025188;
+    --light-palet-color: #e3edcb;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--dark-palet-color);
+}
+body header{
+    height: 40px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body header nav{
+    display: flex;
+    background-color: var(--black);
+    color: #ffffff;
+}
+body header nav section{
+    margin: 0 15px;
+}
+body header nav p{
+    box-shadow: 2px 2px 4px 0px var(--light-palet-color);
+}
+body main{
+    background-color: #025188;
+}
+body main .main-section-1{
+    padding: 5px 15px 5px 15px;
+    border-bottom: 1px solid var(--light-palet-color);
+}
+body main .main-section-1 p{
+    font-weight: 500;
+    color: var(--light-palet-color);
+}
+body main .main-section-1 ul{
+    list-style: none;
+    color: var(--white);
+}
+main .main-section-2-infotriangulo{
+    padding: 5px 15px 5px 15px;
+}
+main .main-section-2-infotriangulo p{
+    color: var(--light-palet-color);
+}
+main .main-section-3-infoCirculo{
+    padding: 5px 15px 5px 15px;
+}
+main .main-section-3-infoCirculo p{
+    color: var(--light-palet-color);
+}
