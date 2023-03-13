@@ -31,24 +31,25 @@
             </ul>
         </section>
         <section class="main-section-2-infotriangulo">
-            <p>¿Necesitas calcular el área y perimetro de un triángulo?</p>
+            <p>¿Necesitas calcular el área y perimetro de un triángulo que no es triángulo rectángulo?</p>
+            <p>
+                Cuando no es un triángulo rectángulo, pero se conocen los lados del triángulo es posible calcular su área, perímetro y altura mediante la fórmula de Herón.
+                <br> <br>
+                <img src="https://i.ytimg.com/vi/6c_VZQhIwCk/maxresdefault.jpg" alt="Fórmula de Herón">
+            </p>
             <div>
                 <label for="Lado1">
-                    ¿Cuál es el lado 1?
+                    ¿Cuál es el lado b?
                     <input type="number" placeholder="" id="Lado1">
                 </label>
                 <label for="Lado2">
-                    ¿Cuál es el lado 2?
+                    ¿Cuál es el lado c?
                     <input type="number" placeholder="" id="Lado2">
                 </label>
                 <label for="Lado3">
-                    ¿Cuál es el lado 3 o la base?
+                    ¿Cuál es el lado a?
                     <input type="number" placeholder="" id="Lado3">
                 </label>
-                <!-- <label for="Altura">
-                    ¿Cuál es la altura?
-                    <input type="number" placeholder="" id="Altura">
-                </label> -->
                 <button id="trianguloButton">Calcular Triangulo</button>
             </div>
             <div class="trianguloResultadosContainer">
@@ -56,6 +57,7 @@
                 <p>Perímetro: <span id="perimetroTrianguloResult"></span></p>
                 <p>Área: <span id="areaTrianguloResult"></span></p>
                 <p>Altura: <span id="alturaTrianguloResult"></span></p>
+                <p>Nota: La unidad "u" hace referencia a la unidad de medida que estés usando, por ejemplo: centímetros (cm)</p>
             </div>
         </section>
         <section class="main-section-3-infoCirculo">
