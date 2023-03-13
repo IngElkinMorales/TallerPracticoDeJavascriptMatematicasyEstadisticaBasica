@@ -3,6 +3,7 @@
     --white: #ffffff;
     --dark-palet-color: #025188;
     --light-palet-color: #e3edcb;
+    --light1-palet-color: #b2d562;
 }
 *{
     box-sizing: border-box;
@@ -47,13 +48,31 @@ body main .main-section-1 ul{
 }
 main .main-section-2-infotriangulo{
     padding: 5px 15px 5px 15px;
+    border-bottom: 1px solid var(--light-palet-color);
 }
 main .main-section-2-infotriangulo p{
     color: var(--light-palet-color);
 }
 main .main-section-3-infoCirculo{
     padding: 5px 15px 5px 15px;
+    border-bottom: 1px solid var(--light-palet-color);
 }
 main .main-section-3-infoCirculo p{
     color: var(--light-palet-color);
+}
+main .main-section-4-DiscountPrice{
+    padding: 5px 15px 5px 15px;
+    border-bottom: 1px solid var(--light-palet-color);    
+}
+main .main-section-4-DiscountPrice p{
+    color: var(--light-palet-color);
+    margin-bottom: 5px;
+}
+main .main-section-4-DiscountPrice label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid var(--white);
+    color: var(--light1-palet-color);
 }
