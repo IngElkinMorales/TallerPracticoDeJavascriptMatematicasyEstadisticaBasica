@@ -53,12 +53,34 @@ main .main-section-2-infotriangulo{
 main .main-section-2-infotriangulo p{
     color: var(--light-palet-color);
 }
+main .main-section-2-infotriangulo div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+main .main-section-2-infotriangulo div label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid var(--white);
+    color: var(--light1-palet-color);
+}
 main .main-section-3-infoCirculo{
     padding: 5px 15px 5px 15px;
     border-bottom: 1px solid var(--light-palet-color);
 }
 main .main-section-3-infoCirculo p{
     color: var(--light-palet-color);
+}
+main .main-section-3-infoCirculo label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid var(--white);
+    color: var(--light1-palet-color);
+    margin-top: 10px;    
 }
 main .main-section-4-DiscountPrice{
     padding: 5px 15px 5px 15px;

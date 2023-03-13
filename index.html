@@ -32,24 +32,39 @@
         </section>
         <section class="main-section-2-infotriangulo">
             <p>¿Necesitas calcular el área y perimetro de un triángulo?</p>
-            <label for="Lado1">
-                <input type="number" placeholder="¿Cuál es el lado 1?">
-            </label>
-            <label for="Lado2">
-                <input type="number" placeholder="¿Cuál es el lado 2?">
-            </label>
-            <label for="Lado3">
-                <input type="number" placeholder="¿Cuál es el lado 3?">
-            </label>
-            <label for="Altura">
-                <input type="number" placeholder="¿Cuál es la altura?">
-            </label>
+            <div>
+                <label for="Lado1">
+                    ¿Cuál es el lado 1?
+                    <input type="number" placeholder="" id="Lado1">
+                </label>
+                <label for="Lado2">
+                    ¿Cuál es el lado 2?
+                    <input type="number" placeholder="" id="Lado2">
+                </label>
+                <label for="Lado3">
+                    ¿Cuál es el lado 3 o la base?
+                    <input type="number" placeholder="" id="Lado3">
+                </label>
+                <!-- <label for="Altura">
+                    ¿Cuál es la altura?
+                    <input type="number" placeholder="" id="Altura">
+                </label> -->
+                <button id="trianguloButton">Calcular Triangulo</button>
+            </div>
+            <div class="trianguloResultadosContainer">
+                <h2>Resultados</h2>
+                <p>Perímetro: <span id="perimetroTrianguloResult"></span></p>
+                <p>Área: <span id="areaTrianguloResult"></span></p>
+                <p>Altura: <span id="alturaTrianguloResult"></span></p>
+            </div>
         </section>
         <section class="main-section-3-infoCirculo">
             <p>¿Necesitas calcular el área y perimetro de un círculo?</p>
             <label for="Radio">
-                <input type="number" placeholder="¿Cuál es el radio del círculo?">
+                ¿Cuál es el radio del círculo?
+                <input type="number" placeholder="">
             </label>
+            <button>Calcular Círculo</button>
         </section>
         <section class="main-section-4-DiscountPrice">
             <p>
@@ -63,6 +78,10 @@
                 ¿Cuál es el descuento del producto?
                 <input type="number" id="Discount">
             </label>
+            <button id="DiscountButton">Calcular Descuento</button>
+            <div class="DiscountResultContainer">
+                <p id="DiscountResult">Resultado 😊</p>
+            </div>
         </section>
     </main>
 
