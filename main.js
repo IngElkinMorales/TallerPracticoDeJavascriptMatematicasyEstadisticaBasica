@@ -9,6 +9,11 @@ const alturaTrianguloResult = document.querySelector('#alturaTrianguloResult');
 const trianguloButton = document.querySelector('#trianguloButton');
 trianguloButton.addEventListener('click', calcularTriangulo);
 
+const inputPriceCoupon = document.querySelector('#PriceCoupon');
+const inputDiscountCoupon = document.querySelector('#DiscountCoupon');
+const discountCouponButton = document.querySelector('#DiscountCouponButton');
+discountCouponButton.addEventListener('click', calcularDescuentoConCupon);
+const discountCouponResult = document.querySelector('#DiscountCouponResult');
 
 let ladoCuadrado = 5;
 let perimetroCuadrado = ladoCuadrado*4;
@@ -18,8 +23,6 @@ let areaCuadrado = ladoCuadrado*ladoCuadrado
 let inputLadoTriangulo1 = document.querySelector('#Lado1');
 let inputLadoTriangulo2 = document.querySelector('#Lado2');
 let inputLadoTrianguloBase = document.querySelector('#Lado3');
-
-let areaTriangulo = (ladoTrianguloBase*alturaTriangulo)/2;
 
 discountButton.addEventListener('click', calcularDiscount);
 let inputPrice = document.querySelector('#Price');
@@ -46,6 +49,32 @@ function calcularDiscount(){
     let newPrice = (price * (100 - discount))/100
 
     discountResult.innerText = 'Aplicando el descuento el nuevo precio es: $ ' + newPrice
+}
+
+function calcularDescuentoConCupon(){
+    console.log('Escuchando');
+    
+    let price = Number(inputPriceCoupon.value);
+    let coupon = inputDiscountCoupon.value;
+    let discount;
+
+    if(!price || !coupon){
+        alert ('Ingresa valores válidos');
+        return;
+    }
+
+    if(coupon == 'IngElkinMorales'){
+        discount = 25
+    } else if (coupon == 'DXNColombia'){
+        discount = 20
+    } else {
+        discountCouponResult.innerText = 'El cupón no es válido';
+        return;
+    }
+
+    let newPrice = (price * (100 - discount))/100
+
+    discountCouponResult.innerText = 'Aplicando el descuento el nuevo precio es: $ ' + newPrice
 }
 
 function calcularTriangulo(){
