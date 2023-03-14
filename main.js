@@ -15,6 +15,29 @@ const discountCouponButton = document.querySelector('#DiscountCouponButton');
 discountCouponButton.addEventListener('click', calcularDescuentoConCupon);
 const discountCouponResult = document.querySelector('#DiscountCouponResult');
 
+const couponsObj = {
+    'IngElkinMorales':25,
+    'DXNColombia':20,
+    '123':15,
+};
+
+const couponList = [];
+
+couponList.push({
+    name:'IngElkinMorales',
+    discount: 25,
+})
+
+couponList.push({
+    name:'DXNColombia',
+    discount: 20,
+})
+
+couponList.push({
+    name:'123',
+    discount: 15,
+})
+
 let ladoCuadrado = 5;
 let perimetroCuadrado = ladoCuadrado*4;
 
@@ -63,14 +86,50 @@ function calcularDescuentoConCupon(){
         return;
     }
 
-    if(coupon == 'IngElkinMorales'){
-        discount = 25
-    } else if (coupon == 'DXNColombia'){
-        discount = 20
+    
+    function isCouponInArray(couponElement){
+        return couponElement.name == coupon;
+    }
+    
+    const couponInArray = couponList.find(isCouponInArray);
+
+    if(couponInArray){
+        discount = couponInArray.discount;
     } else {
         discountCouponResult.innerText = 'El cupón no es válido';
         return;
     }
+
+    console.table({
+        coupon,
+        discount,
+        couponInArray,
+        couponList,
+    })
+    /* 
+    lógica con un array
+    if(couponInArray.length > 0){
+        discount = couponInArray[0].discount;
+    } else {
+        discountCouponResult.innerText = 'El cupón no es válido';
+        return;
+    }
+
+    console.table({
+        coupon,
+        discount,
+        couponInArray,
+        couponList,
+    }) */
+
+    /* 
+    lógica con un objeto
+    if (couponsObj[coupon]){
+        discount = couponsObj[coupon];
+    } else {
+        discountCouponResult.innerText = 'El cupón no es válido';
+        return;
+    } */
 
     let newPrice = (price * (100 - discount))/100
 
