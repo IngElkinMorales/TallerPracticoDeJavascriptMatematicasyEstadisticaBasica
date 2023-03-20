@@ -21,6 +21,7 @@ promedioResultButton.addEventListener('click', calcularPromedio);
 
 let arrayPromedio = [1,2,3,4,5,6];
 
+
 let ladoCuadrado = 5;
 let perimetroCuadrado = ladoCuadrado*4;
 
@@ -69,14 +70,50 @@ function calcularDescuentoConCupon(){
         return;
     }
 
-    if(coupon == 'IngElkinMorales'){
-        discount = 25
-    } else if (coupon == 'DXNColombia'){
-        discount = 20
+    
+    function isCouponInArray(couponElement){
+        return couponElement.name == coupon;
+    }
+    
+    const couponInArray = couponList.find(isCouponInArray);
+
+    if(couponInArray){
+        discount = couponInArray.discount;
     } else {
         discountCouponResult.innerText = 'El cupón no es válido';
         return;
     }
+
+    console.table({
+        coupon,
+        discount,
+        couponInArray,
+        couponList,
+    })
+    /* 
+    lógica con un array
+    if(couponInArray.length > 0){
+        discount = couponInArray[0].discount;
+    } else {
+        discountCouponResult.innerText = 'El cupón no es válido';
+        return;
+    }
+
+    console.table({
+        coupon,
+        discount,
+        couponInArray,
+        couponList,
+    }) */
+
+    /* 
+    lógica con un objeto
+    if (couponsObj[coupon]){
+        discount = couponsObj[coupon];
+    } else {
+        discountCouponResult.innerText = 'El cupón no es válido';
+        return;
+    } */
 
     let newPrice = (price * (100 - discount))/100
 
