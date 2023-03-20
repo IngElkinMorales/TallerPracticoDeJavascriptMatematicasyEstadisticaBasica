@@ -15,6 +15,12 @@ const discountCouponButton = document.querySelector('#DiscountCouponButton');
 discountCouponButton.addEventListener('click', calcularDescuentoConCupon);
 const discountCouponResult = document.querySelector('#DiscountCouponResult');
 
+const promedioResult = document.querySelector('.PromedioResult');
+const promedioResultButton = document.querySelector('.PromedioResultButton');
+promedioResultButton.addEventListener('click', calcularPromedio);
+
+let arrayPromedio = [1,2,3,4,5,6];
+
 let ladoCuadrado = 5;
 let perimetroCuadrado = ladoCuadrado*4;
 
@@ -116,6 +122,68 @@ function calcularCirculo(radio){
     }
 }
 
+function calcularPromedio(){
+    /* console.log('Escuchando'); */
+    
+    /* 
+    //Solución con ciclo for
+    let sumaLista = 0;
+    for (let i = 0; i < arrayPromedio.length; i++) {
+        sumaLista = sumaLista + arrayPromedio[i];        
+    }; */
+
+    /* 
+    //Solución con el reduce
+    function SumarTodosLosElementos(valorAcumulado, nuevoValor){
+        return valorAcumulado + nuevoValor;
+    };
+    const sumaLista = arrayPromedio.reduce(SumarTodosLosElementos); */
+
+    /*
+    //Solución con arrowFuntion
+    const SumarTodosLosElementos = (valorAcumulado, nuevoValor) => {
+        return valorAcumulado + nuevoValor;
+    };
+    const sumaLista = arrayPromedio.reduce(SumarTodosLosElementos); */
+
+    const SumarTodosLosElementos = (valorAcumulado, nuevoValor) => valorAcumulado + nuevoValor;
+    const sumaLista = arrayPromedio.reduce(SumarTodosLosElementos);
+
+    let promedio = sumaLista / arrayPromedio.length;
+
+    promedioResult.innerText = promedio;
+}
+function isArrayPair (arrayPromedio){
+    /* let pairOrNot; */
+
+    if (Number.isInteger(arrayPromedio.length/2)) {
+        return true;
+       /*  pairOrNot = 'La lista es par'; */
+    } else {
+        return false;
+        /* pairOrNot = 'La lista es impar'; */
+    }
+}
+
+function calcularMediana(lista){
+    const listaEsPar = isArrayPair(lista);
+    
+    if(listaEsPar){
+        const indexMedianaPar1 = lista[Math.floor((lista.length/2)-1)];
+        const indexMedianaPar2 = lista[Math.floor((lista.length/2))];
+
+        return calcularPromedio ([indexMedianaPar1,indexMedianaPar2]);
+
+        console.log({
+            indexMedianaPar1,
+            indexMedianaPar2,
+        })
+    } else {
+        const indexMedianaImpar = Math.floor((lista.length/2));
+
+        console.log(lista[indexMedianaImpar]);
+    }
+}
 console.group();
 
 const radioCirculo = 6;
@@ -124,10 +192,3 @@ const diametroCirculo = radioCirculo*2;
 
 console.groupEnd();
 
-console.log({
-    ladoCuadrado,
-    perimetroCuadrado,
-    areaCuadrado,
-    perimetroTriangulo,
-    areaTriangulo,
-});

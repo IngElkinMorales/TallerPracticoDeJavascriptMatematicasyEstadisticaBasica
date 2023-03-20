@@ -130,3 +130,17 @@ main .main-section-4-DiscountPriceCoupon label {
     border: 1px solid var(--white);
     color: var(--light1-palet-color);
 }
+
+main .main-section-4-calcular-promedio{
+    padding: 5px 15px 5px 15px;
+    border-bottom: 1px solid var(--light-palet-color);  
+}
+main .main-section-4-calcular-promedio p{
+    color: var(--light-palet-color);
+    margin-bottom: 5px;
+}
+
+main .main-section-4-calcular-promedio div{
+    display: flex;
+    flex-direction: column;
+}
